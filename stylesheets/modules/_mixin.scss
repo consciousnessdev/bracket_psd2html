@@ -1,0 +1,30 @@
+@mixin font-set($name, $url) {
+  @font-face {
+    font-family: #{$name};
+    src: url('#{$url}.eot');
+    src: url('#{$url}.eot#iefix') format("embedded-opentype"),
+         url('#{$url}.ttf') format('truetype'),
+         url('#{$url}.svg##{$name}') format('svg'),
+         url('#{$url}.woff') format('woff'),
+	  	 url('#{$url}.otf') format('opentype');
+    @content;
+  }
+}
+
+@mixin underline($weight:1px, $style: solid, $color: $underline-color){
+    content: " ";
+    display: block;
+    border-top: $weight $style $color;
+}
+
+@mixin lef($mrig){
+    margin: 0 $mrig 0 0; 
+}
+
+@mixin mid($mmid){
+    margin: 0 $mmid 0 $mmid; 
+}
+
+@mixin rig($mlef){
+    margin: 0 0 0 $mlef; 
+}
